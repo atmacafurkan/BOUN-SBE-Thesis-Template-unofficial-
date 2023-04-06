@@ -1,0 +1,48 @@
+% frontmatter
+\pagenumbering{gobble}
+\input{frontmatter/title-page.tex}
+
+\input{frontmatter/0-approval-page.tex}
+
+\input{frontmatter/1-declarationoforiginality.tex}
+
+\input{frontmatter/2-abstract.tex}
+
+\renewcommand\contentsname{TABLE OF CONTENTS}
+\renewcommand\listfigurename{LIST OF FIGURES}
+\renewcommand\listtablename{LIST OF TABLES}
+
+\tableofcontents
+\begingroup
+\renewcommand{\addvspace}[1]{}
+\printglossary[title=\MakeUppercase{abbreviations}, style=block,nonumberlist]
+\listoftables
+\listoffigures
+\endgroup
+\clearpage
+
+
+% main body
+\pagenumbering{arabic}
+
+% PUT YOUR CHAPTERS HERE USING INPUT COMMAND
+
+\input{main-body/chapters/chapter1.tex}
+
+\input{main-body/chapters/chapter2.tex}
+
+\input{main-body/chapters/chapter3.tex}
+
+\input{main-body/chapters/chapter4.tex}
+
+\input{main-body/chapters/chapter5.tex}
+
+\input{main-body/chapters/chapter6.tex}
+
+
+
+
+
+
+
+

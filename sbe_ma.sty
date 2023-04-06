@@ -1,0 +1,252 @@
+% font
+\usepackage{times}
+\usepackage[T1]{fontenc}
+
+% Turkish characters
+\usepackage[utf8]{inputenc}
+
+% margins
+\usepackage{geometry}
+\geometry{paper=a4paper, left=4cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+% remove hyphenation, fix margin violation.
+\usepackage{hyphenat}
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+% math symbols
+\usepackage{amsmath}
+
+% include graphics
+\usepackage{graphicx}
+
+% some float environments
+% \usepackage{nonfloat}
+
+% including code snippets
+\usepackage{listings}
+
+% multiple columns
+\usepackage{multicol}
+% prevent empty space before multicols, if they are on page edges weird stuff can happen please check your multicol environments in the pdf.
+\setlength\multicolsep{0pt}
+
+% matrices
+\usepackage{avm}
+
+% optimality theory tableaus
+\usepackage{ot-tableau}
+
+% table environment
+\usepackage{slashbox}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{amsmath} 
+\usepackage{arydshln}
+\usepackage{rotating}
+
+% Internetional Phonetic Alphabet, phonological rules.
+\usepackage{tipa}
+\usepackage{phonrule}
+
+% framing
+\usepackage{framed}
+
+% appendix title
+\usepackage[title]{appendix}
+
+% color
+\usepackage{color}
+
+% line spacing
+\usepackage{setspace}
+\doublespacing
+
+% \sout function and some others, without the option it messes up end-text citation
+\usepackage[normalem]{ulem}
+
+% sout in math mode
+\usepackage{cancel}
+
+% for footnotes in tables
+\usepackage{tablefootnote}
+
+% stop footnote number resetting
+\counterwithout{footnote}{chapter}
+
+% for month and year info
+\usepackage{datetime}
+
+% title formatting
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalfont}{\thesubsubsection}{1em}{}
+
+\titleformat{\chapter}[display]
+{\normalfont\center}
+{\MakeUppercase{\chaptertitlename} \thechapter}{0pt}{}
+
+\titlespacing*{\chapter}{0pt}{-50pt}{2em}
+\titlespacing*{\section}{0pt}{2em}{0em}
+\titlespacing*{\subsection}{0pt}{2em}{0em}
+\titlespacing*{\subsubsection}{0pt}{2em}{0em}
+
+% makes subsubsection numbering visible in section heading.
+\setcounter{secnumdepth}{3}
+
+% preamble pages
+\usepackage{titletoc}
+
+% edit table of content format
+\titlecontents{chapter}[0pt]{}{\MakeUppercase{\chaptertitlename\space\thecontentslabel:\space}\MakeUppercase}{}{\dotfill\contentspage}
+
+\titlecontents{section}[2.3em]{}{\thecontentslabel\space}{}{\dotfill\contentspage}
+
+\titlecontents{subsection}[4.6em]{}{\thecontentslabel\space}{}{\dotfill\contentspage}
+
+\titlecontents{figure}[0pt]{\hangindent 1.5em}{\figurename\space\thecontentslabel.\space}{}{\dotfill\contentspage}
+
+\titlecontents{table}[0pt]{\hangindent 1.5em}{\tablename\space\thecontentslabel.\space}{}{\dotfill\contentspage}
+
+% table of content depth 1 > CHAPTERs and Sections. 2 > + subsections
+\setcounter{tocdepth}{1}
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+% configure figure and table captions
+\usepackage[labelsep=period]{caption}
+\captionsetup{justification=raggedright,singlelinecheck=false, belowskip=0pt}
+\captionsetup[table]{aboveskip=-0.2em}
+\usepackage{subcaption}
+
+% align figure and table captions to the left margin
+\AtBeginEnvironment{figure}{\setlength{\RaggedRightParindent}{0em}}
+\AtBeginEnvironment{table}{\setlength{\RaggedRightParindent}{0em}}
+
+
+%% R graphics and environment settings %%
+\usepackage{alltt}
+
+% knitr settings
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{}
+%% end R environment %%
+
+% for word count
+% \usepackage{verbatim}
+% \immediate\write18{texcount -inc -incbib 
+% -sum main.tex > /tmp/wordcount.tex}
+% \newcommand\wordcount{
+% \verbatiminput{/tmp/wordcount.tex}}
+
+
+% hinder widows and orphans
+\usepackage[all]{nowidow}
+
+% change spacing per environments
+\usepackage{etoolbox}
+\AtBeginEnvironment{quote}{\par\singlespacing\small}
+\AtBeginEnvironment{forest}{\singlespacing\small}
+\AtBeginEnvironment{exe}{\singlespacing}
+
+\newlength\mystoreparindent
+\newenvironment{myparindent}[1]{%
+\setlength{\mystoreparindent}{\the\parindent}
+\setlength{\parindent}{#1}
+}{%
+\setlength{\parindent}{\mystoreparindent}
+}
+
+% text positioning
+\usepackage[document]{ragged2e}
+\setlength\RaggedRightParindent{1.27cm}
+
+%%% KEEP THESE PACKAGES AT THE VERY END OF YOUR STY FILE IF YOU WANT TO HAVE ADDITIONAL PACKAGES %%%
+%%% BIBLATEX OPTION FOR CITATION %%%
+\usepackage[style=apa, autocite=footnote, natbib=true, 
+            doi=true, isbn=false, 
+            citereset=chapter, citetracker=true, maxcitenames=2, backend=biber]{biblatex}
+\AtEveryCitekey{\ifciteseen{}{\defcounter{maxnames}{5}}}
+\addbibresource{references.bib}
+
+
+% edit printing option for the doi field, 'doi:`followed by the identifier not a link. 
+\DeclareFieldFormat{doi}{doi:#1}
+
+% Possessive citation
+\DeclareNameWrapperFormat{labelname:poss}{#1's}
+
+\DeclareFieldFormat{shorthand:poss}{%
+  \ifnameundef{labelname}{#1's}{#1}}
+
+\DeclareFieldFormat{citetitle:poss}{\mkbibemph{#1}'s}
+
+\DeclareFieldFormat{label:poss}{#1's}
+
+\newrobustcmd*{\posscitealias}{%
+  \AtNextCite{%
+    \DeclareNameWrapperAlias{labelname}{labelname:poss}%
+    \DeclareFieldAlias{shorthand}{shorthand:poss}%
+    \DeclareFieldAlias{citetitle}{citetitle:poss}%
+    \DeclareFieldAlias{label}{label:poss}}}
+
+\newrobustcmd*{\posscite}{%
+  \posscitealias%
+  \textcite}
+
+\newrobustcmd*{\Posscite}{\bibsentence\posscite}
+
+\newrobustcmd*{\posscites}{%
+  \posscitealias%
+  \textcites}
+
+
+% leipzig glossing
+\usepackage[block]{leipzig}
+% input glosses
+\input{frontmatter/glossaries.tex}
+
+% numbered linguistics examples with glossing
+\usepackage{langsci-gb4e}
+
+% makes language examples appear in italic
+\let\eachwordone=\itshape
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

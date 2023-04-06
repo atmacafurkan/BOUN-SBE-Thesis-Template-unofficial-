@@ -1,0 +1,71 @@
+\section{Notes on citations and references}
+
+As of this template is formed (August 2022), SBE requires you to cite works by two authors with the `\&' symbol when the citation is in parentheses, and with the actual word `and' when the citation is in text, examples below:
+
+\begin{itemize}
+    \item In-text citation two authors: \citet{LogacevVasishth2012} 
+    \item Parentheses citation two authors: \citep{LogacevVasishth2012}
+\end{itemize}
+
+When the cited work has 3 to 5 authors, the first citation should include all the author surnames, example below:
+
+\begin{itemize}
+    \item First time citing in text: \citet{FedorenkoEtAl2004}
+    \item Following citations in text: \citet{FedorenkoEtAl2004}
+    \item First time citing in parentheses: \citep{AcunaEtAl2014} 
+    \item Following citations in parentheses: \citep{AcunaEtAl2014} 
+\end{itemize}
+
+If the cited work has more than five authors, the first and the following citations only include the first author's name, examples below:
+
+\begin{itemize}
+    \item Citing in text with more than five authors: \citet{turk2022resources}
+    \item Citing in parentheses with more than five authors: \citep{turk2022resources}
+\end{itemize}
+
+Another issue with citation is citing multiple authors. When you are citing multiple authors in text, there should be an `and' before the last citation, examples below:
+
+\begin{itemize}
+    \item Two citation separation: \citet{atmaca2020,turk2022resources}
+    \item Multiple citation separation: \citet{atmaca2020,turk2022attraction,turk2022resources}
+\end{itemize}
+
+One more consideration is citing work with saxon genitives (`s). Such citations are only used in text, that is why there is no parentheses version of this, examples below:
+
+\begin{itemize}
+    \item Single author saxon genitive: \posscite{atmaca2020} arguments are questionable.
+    \item Two authors saxon genitive: \posscite{atmaca2020,turk2022attraction} arguments are questionable.
+    \item Multiple authors saxon genitive: \posscite{atmaca2020,turk2022attraction,turk2022resources} arguments are questionable.
+\end{itemize}
+
+
+You can use square brackets in parentheses, in-text, and in-text saxon genitive citations to indicate page numbers, examples, and etc, examples below:
+
+\begin{itemize}
+    \item \citet[p98]{atmaca2020} makes theoretical arguments.
+    \item Such arguments are also repeated elsewhere \citep[p98]{atmaca2020}.
+    \item \posscite[p.98]{atmaca2020} arguments are theoretical.
+\end{itemize}
+
+You can also have multiple citations with different page, chapter, or other information, examples below:
+
+\begin{itemize}
+    \item In text citation with multiple works and different information: \textcites[p98]{atmaca2020}[p.70]{turk2022attraction}[p20]{turk2022resources} make similar points.
+    \item In parentheses citation with multiple works and different information:Similar points are made elsewhere \parencites[p.98]{atmaca2020}[p.70]{turk2022attraction}[p.20]{turk2022resources} make similar points.
+\end{itemize}
+
+You can also add information before the citation key using an extra set of square brackets. The first becomes the pre-key field, the second becomes the post-key field, examples below:
+
+\begin{itemize}
+    \item In parentheses citation with pre- and post- field: This idea can be changed \citep[as cited in][p.20]{atmaca2020}.
+    \item Multiple in parantheses citation with differing pre- and post- fields: This idea can be changed \parencites[as cited in][p.98]{atmaca2020}[as implemented in][p.70]{turk2022attraction}[as cited in][p.20]{turk2022resources}.
+\end{itemize}
+
+Standing issues with the current template with regards to citations and references include:
+
+\begin{itemize}
+    \item Custom alphabetical ordering for Turkish characters
+    \item Custom warnings for missing fields (address, editor, volume, etc.) in references
+\end{itemize}
+
+The first issue requires custom data models provided to the biblatex package. I couldn't hack it as of now. The second issue can also be solved by a custom data model (which I can't make work currently). However, it can be checked manually by the author of the thesis.

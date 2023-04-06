@@ -1,0 +1,27 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{dmtools}
+
+\RequirePackage{kvoptions}
+
+% options declarations
+%
+\DeclareBoolOption{manu}
+\DeclareBoolOption{fields}
+\DeclareStringOption[numeric]{basestyle}
+
+\ProcessKeyvalOptions*
+
+\ifdmtools@manu
+  \def\dmtmanu{dmtools-manu}    % the name of .dbx file for the 'manu' tool
+\fi
+
+\ifdmtools@fields
+  \def\dmtfields{dmtools-fields}    % the name of .dbx file for the 'fields' tool
+\fi
+
+\ifx\dmtools@basestyle\@empty
+\else
+  \def\dmtbasestyle{\dmtools@basestyle} % the name of bibstyle to load later
+\fi
+
+\endinput

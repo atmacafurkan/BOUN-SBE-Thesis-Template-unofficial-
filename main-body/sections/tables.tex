@@ -1,0 +1,20 @@
+\section{Linguistic tables}
+
+The normal tabularx environments are enough for generic table uses. However a linguistics student might need to use an Optimality Theory tableau in representing (mostly) phonological processes. For special characters that are used in IPA (international phonetic alphabet), we use the package `tipa' consult package documentation for more information. Now we can try to form a tableau for k-zero alternation in a Turkish expression like `\textit{öğren-me/k/-i}' learn-{\Inf}-{\Acc}, where there is free variation among people between \phon{/k/}{[\textgamma]} and \phon{/k/}{[j]}. See Table \ref{tab:kzero} for an OT tableau.
+
+\begin{table}[hbt!]
+    \caption{OT Tableau for k-zero Alternation}
+    \vspace{10pt}
+    \centering
+    \begin{tableau}{c:c|c}
+        \inp{\ips{\oe :\textfishhookr\textepsilon nm\textepsilon k}} \const{*STOP} \const{PALATAL}
+        \cand{\oe :\textfishhookr\textepsilon nm\textepsilon k} \vio{*!} \vio{}
+        \cand{\oe :\textfishhookr\textepsilon nm\textepsilon\textgamma} \vio{} \vio{*}
+        \cand[\Optimal]{\oe :\textfishhookr\textepsilon nm\textepsilon j} \vio{} \vio{}
+    \end{tableau}
+
+    \label{tab:kzero}
+\end{table}
+
+Please remember that SBE follows a different Table and Figure caption placement. As of this template is being formed Table captions come above the Tables and Figure captions come below the Figure environments. Be sure to check SBE's editor guidelines for up to date information. All of the Figures and Tables are automatically added to the list of tables and list of figures with their caption name and the number of the page they appear in, with the SBE required stylistic customizations. An example for in-text citing where \citet{atmaca2020} talks about making an MA template complying with SBE guidelines \citep{atmaca2020} is just given.
+

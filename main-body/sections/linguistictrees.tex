@@ -1,0 +1,53 @@
+\section{Linguistic trees}
+
+In linguistics we use `trees' that are representational figures that show hierarchical order of how different levels of structural categories are put together. For the most part of the trees you can use the package `forest'. For example see Figure \ref{fig:linguisticexample} for a representation of (\ref{linguisticexample}).
+
+\begin{figure}[hbt!]
+    \centering
+    \begin{forest}
+        [TP 
+            [DP\\\textit{Furkan}$_i$, name=specT]
+            [T' 
+                [VoiceP 
+                    [\sout{DP}$_i$, name=specVoi]
+                    [Voice' 
+                        [VP 
+                            [DP\\\textit{ev-i}]
+                            [V\\\textit{bul}]]
+                        [Voice]]]
+                [T\\\textit{-du}]]]
+    \draw[semithick, dashed, ->] (specVoi) to[out=north west, in=south] (specT);
+    \end{forest}
+    \caption{An example syntax tree}
+    \label{fig:linguisticexample}
+\end{figure}
+
+We can also employ feature matrices with our trees as in Figure \ref{fig:linguisticexample2}.
+      
+\begin{figure}[hbt!]
+    \centering
+    \begin{forest}
+        [TP 
+            [\begin{avm}
+            \[
+                per & {\Third} \\ 
+                num & {\Sg} \\
+                case & {\Nom} \]
+            \end{avm}, name=specT]
+            [T' 
+                [VoiceP 
+                    [\sout{DP}$_i$, name=specVoi]
+                    [Voice' 
+                        [VP 
+                            [DP\\\textit{ev-i}]
+                            [V\\\textit{bul}]]
+                        [Voice]]]
+                [T\\\textit{-du}]]]
+    \draw[semithick, dashed, ->] (specVoi) to[out=west, in=south] (specT);
+    \end{forest}
+    \caption{Another example syntax tree}
+    \label{fig:linguisticexample2}
+\end{figure}
+
+If you happen to have any difficulties with drawing trees consult package documentations for `tikz', `tikz-qtree', `forest', and `avm'. This template lets you use all of them in your trees.
+

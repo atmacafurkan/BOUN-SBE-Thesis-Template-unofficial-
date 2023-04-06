@@ -1,0 +1,70 @@
+\documentclass[12pt, a4paper, oneside]{report}
+
+%%% THESE PACKAGES REQUIRE ROOT ACCESS SO MOVED OUT OF STYLE PACKAGE %%%
+% for drawing trees 
+\usepackage[linguistics, external]{forest}
+\forestset{sn edges/.style={for tree={parent anchor=south, child anchor=north, s sep=5mm, inner sep=0mm}}}
+ 
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\tikzset{every tree node/.style={align=center, anchor=north}}
+\usetikzlibrary{positioning}
+
+% externalizing figures, helps with compiling
+%\usetikzlibrary{external}
+%\tikzexternalize[prefix=tikzz/]
+
+
+% call style package for the thesis
+\usepackage{sbe_ma}
+
+
+%%% START FILL IN THE RELEVANT INFORMATION HERE %%%
+\newcommand{\authname}{Name Surname} 
+\newcommand{\ttitle}{This is Only a Dummy Thesis Title, Not a Real One \\
+Capitalize Your Own Title in the Same Way}
+\newcommand{\ttitletr}{Türkçe Tez Başlığı}
+\newcommand{\univname}{Boğaziçi University}
+\newcommand{\degname}{Master of Arts}
+\newcommand{\deptname}{Linguistics}
+\newcommand{\supname}{Prof.}
+\newcommand{\juryfname}{Prof.}
+\newcommand{\jurysname}{Prof.}
+\newcommand{\thesismonth}{Thesis Month Name}
+\newcommand{\thesisyear}{THESIS YEAR}
+%repeat the same in capitals
+\newcommand{\authnamecaps}{NAME SURNAME} 
+\newcommand{\ttitlecaps}{THESIS TITLE}
+\newcommand{\ttitletrcaps}{TÜRKÇE TEZ BAŞLIĞI}
+\newcommand{\univnamecaps}{BOĞAZİÇİ UNIVERSITY}
+\newcommand{\degnamecaps}{MASTER OF ARTS}
+\newcommand{\deptnamecaps}{DEPARTMENT}
+%%% END FILL IN THE INFORMATION %%%
+
+\begin{document}
+
+\input{loader.tex}
+
+\begin{appendices}
+
+% changing chapter heading for table of content
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+\titlecontents{chapter}[0pt]{}{\MakeUppercase{appendix \thecontentslabel:\space}\MakeUppercase}{}{\dotfill\contentspage}
+
+% endmatter
+\input{appendicies.tex}
+\end{appendices}
+
+\newpage
+% for printing references
+\addcontentsline{toc}{chapter}{REFERENCES}
+\renewcommand\bibname{REFERENCES}
+\begingroup
+\singlespacing
+\raggedright
+\setlength\bibitemsep{12pt} 
+\setstretch{1}
+\printbibliography
+\endgroup
+
+\end{document}

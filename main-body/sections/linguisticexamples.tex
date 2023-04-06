@@ -1,0 +1,20 @@
+\section{Linguistic examples}
+
+In linguistics, we present examples from the language in question for reflecting the structure in the sentence. Since a reader is not necessarily proficient in that language, we provide glossaries for making the sentence open to analysis, and less mysterious. One important point of glossing a linguistic example is aligning the words with the glosses. Luckily for us {\LaTeX} hosts a package called `gb4e' that provides a way to automatize the process. We also use the package `leipzig' for consistent glossing in our examples, and also reporting what glossaries mean in the list of `GLOSSES'. For an example of a linguistic example see (\ref{linguisticexample}).
+
+\begin{exe}
+    \ex \label{linguisticexample}
+    \gll 
+    Furkan ev-i bul-du. \\ F[{\Nom}] house-{\Acc} find-{\Pst}[{\Third}.{\Sg}] \\
+    \glt `Furkan found the house.'
+\end{exe}
+
+The glosses you use in your examples are automatically added to the list of glosses in the frontmatter of your thesis, including the glosses you can define in `glossaries.tex' like {\Aor}.
+
+\subsection{Phonological Rules}
+
+We write phonological rules for certain changes or ways that a phonological process takes place. To represent these rules we can use `phonrule' package. For example to represent k-zero alternation in Turkish we can have the rule provided in (\ref{finaldevoicing}).
+
+\begin{exe}
+\ex \label{finaldevoicing} \phonb{\phonfeat{stop \\ back} }{[\textgamma]}{V}{V}
+\end{exe}
