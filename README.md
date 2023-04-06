@@ -22,3 +22,6 @@ in the language examined, with aligned glossing. These glossings need to be alig
 Common text editors do not allow for spacing words according to the glossing. 
 Also cross referencing to these examples are cumbersome with GUI text editors.
 LaTeX provides solutions for each of the needs of a linguistics student.
+
+# Disclaimer
+This template is a heavily edited template provided here: "https://github.com/ravshansk/sbe.boun.tez"
