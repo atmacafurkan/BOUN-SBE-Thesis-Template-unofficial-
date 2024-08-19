@@ -10,9 +10,9 @@ Please fill in the relevant information in the "main.tex" file.
 Using the "chapters" or "sections" folders are highly recommended. 
 Recommendations:
 
--Externalizing figures might speed up compiling time. (configure your compiler and the template accordingly)
--You can use multiple "*.bib" files and separate them with a comma in loader.tex in the relevant part. This is recommended to keep distinct bib files for different reference types.
--Make sure all the relevant fields of citation are present in your bibtex. Consult SBE's APA guide and natbib documentation.
+1. Externalizing figures might speed up compiling time. (configure your compiler and the template accordingly)
+2. You can use multiple "*.bib" files and separate them with a comma in loader.tex in the relevant part. This is recommended to keep distinct bib files for different reference types.
+3. Make sure all the relevant fields of citation are present in your bibtex. Consult SBE's APA guide and natbib documentation.
 
 
 # Why LaTeX?
